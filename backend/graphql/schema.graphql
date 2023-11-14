@@ -50,7 +50,7 @@ type Note {
 
   text: String!
 
-  userId: User! @belongsTo
+  user_id: User! @belongsTo
 
   created_at: DateTime!
 
@@ -89,7 +89,7 @@ type Mutation {
   createNote(
     title: String! @rules(apply: ["required"]),
     text: String! @rules(apply: ["min:4"]),
-    userId: ID!
+    user_id: ID!
   ): Note! @create
 
   # delete note
