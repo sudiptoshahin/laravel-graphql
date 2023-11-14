@@ -34,7 +34,11 @@ CREATE DATABASE laravel_graphql_vue;
 \q
  ```
   * ##### For SQLite
-For SQLite database you just need to uncomment the 
+For SQLite database you just need to uncomment the following line
+```
+# DB_CONNECTION=sqlite
+# DB_DATABASE=database.sqlite
+```
 
 Then ```cd backend``` and Use the following command for install the laravel dependancy packages:
 
