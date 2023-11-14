@@ -78,7 +78,9 @@ export default {
                     user_id: this.noteAuthor
                 }
                 this.createNote(payload);
-                this.refreshPage();
+
+                console.log('createLoading: ', this.creationLoading);
+                // this.refreshPage();
             }
         }
     },
@@ -88,6 +90,7 @@ export default {
         const noteTitle = ref("");
         const noteText = ref("");
         const noteAuthor = ref();
+        const creationLoading = ref(false);
 
         const { result } = useQuery(gql`
             query notes {
@@ -99,7 +102,7 @@ export default {
             }
         `);
 
-        const { mutate: createNote } = useMutation(gql`
+        const { mutate: createNote, loading } = useMutation(gql`
                 mutation createNote ($title: String!, $text: String!, $user_id: ID!) {
                     createNote (title: $title, text: $text, user_id: $user_id) {
                         title
@@ -116,6 +119,7 @@ export default {
             //     }
             // }
         );
+        creationLoading.value = loading;
 
         const { mutate: deleteNote } = useMutation(gql`
             mutation deleteNote ($id: ID!) {
@@ -132,7 +136,8 @@ export default {
             noteTitle,
             noteText,
             noteAuthor,
-            deleteNote
+            deleteNote,
+            creationLoading,
         }
     }
 }

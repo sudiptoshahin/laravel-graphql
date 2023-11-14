@@ -69,11 +69,6 @@ http://127.0.0.1:8000/graphiql
 ### Now we setup the frontend:
 ```cd frontend``` and run those commands
 ```
-# clear cache
-npm cache clean --force
-
-# verify cache
-npm cache verify
 
 # install packages
 npm install -f
