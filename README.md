@@ -15,7 +15,7 @@ git clone https://github.com/sudiptoshahin/laravel-graphql-vue.git
 * #### Go to project directory:
 ```cd laravel-graphql-vue```
 * #### Database setup
-  * ##### For postgres
+  * ##### For PostgreSQL
     Copy everything from ```/.env-example``` to ```/.env``` file and uncomment from DB_CONNECTION to DB_PASSWORD. and create a database in postgres by using PGAdmin or use those following commands:
  ```
 # Access PostgreSQL
