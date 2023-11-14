@@ -75,7 +75,7 @@ export default {
                 const payload = {
                     title: this.noteTitle,
                     text: this.noteText,
-                    author: this.noteAuthor
+                    user_id: this.noteAuthor
                 }
                 this.createNote(payload);
                 this.refreshPage();
@@ -100,8 +100,8 @@ export default {
         `);
 
         const { mutate: createNote } = useMutation(gql`
-                mutation createNote ($title: String!, $text: String!, $author: ID!) {
-                    createNote (title: $title, text: $text, author: $author) {
+                mutation createNote ($title: String!, $text: String!, $user_id: ID!) {
+                    createNote (title: $title, text: $text, user_id: $user_id) {
                         title
                         text
                     }
