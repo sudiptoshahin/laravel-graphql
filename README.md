@@ -77,6 +77,8 @@ npm install -f
 npm run serve
 ```
 
+#### ui
+![Alt text](image.png)
 
 
 ## License
